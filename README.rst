@@ -10,5 +10,5 @@ How to use
 ----------------
 
 1. Copy data in an applicatoin (e.g. Graph in Microsoft Excel).
-2. In command prompt, type ``cb2emf *output.emf*``.
+2. In command prompt, type ``cb2emf output.emf``.
 3. You can get *output.emf*.
