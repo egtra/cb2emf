@@ -13,6 +13,10 @@ Web site: https://github.com/egtra/cb2emf
 
 注意
 ----------------
+「Microsoft Visual C++ 2010 再頒布可能パッケージ」が必要です。
+まだの人は、ここからvcregist_x86.exeをインストールしてください。
+http://www.microsoft.com/downloads/ja-jp/details.aspx?familyid=fe558aed-9274-415f-8a0f-d9d8622fb35b&displaylang=ja
+
 そもそも、クリップボードにEMFまたはWMFでコピーしてくれない場合は
 対応できません。あくまで、「クリップボードにあるEMFデータを取り出したい」
 という目的で作成したアプリケーションですので。
