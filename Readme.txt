@@ -5,9 +5,6 @@ Web site: https://github.com/egtra/cb2emf
 
 How to use
 ----------------
-CB2EMF requres Microsoft Visual C++ 2010 RTM Redistribue.
-http://www.microsoft.com/downloads/en/details.aspx?FamilyID=fe558aed-9274-415f-8a0f-d9d8622fb35b
-
 1. Copy data in an application (e.g. Graph in Microsoft Excel).
 2. In command prompt, type:
     cb2emf output.emf

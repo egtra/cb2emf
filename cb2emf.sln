@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cb2emf", "cb2emf.vcxproj", "{7DFE136B-BDA5-432F-ABC8-7AAFC4719CD7}"
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cb2emf", "cb2emf.vcproj", "{6E1FF462-66A2-4B8B-B6B8-DAE88C89BE92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7DFE136B-BDA5-432F-ABC8-7AAFC4719CD7}.Debug|Win32.ActiveCfg = Debug|Win32
-		{7DFE136B-BDA5-432F-ABC8-7AAFC4719CD7}.Debug|Win32.Build.0 = Debug|Win32
-		{7DFE136B-BDA5-432F-ABC8-7AAFC4719CD7}.Release|Win32.ActiveCfg = Release|Win32
-		{7DFE136B-BDA5-432F-ABC8-7AAFC4719CD7}.Release|Win32.Build.0 = Release|Win32
+		{6E1FF462-66A2-4B8B-B6B8-DAE88C89BE92}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E1FF462-66A2-4B8B-B6B8-DAE88C89BE92}.Debug|Win32.Build.0 = Debug|Win32
+		{6E1FF462-66A2-4B8B-B6B8-DAE88C89BE92}.Release|Win32.ActiveCfg = Release|Win32
+		{6E1FF462-66A2-4B8B-B6B8-DAE88C89BE92}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

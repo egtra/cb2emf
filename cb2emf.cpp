@@ -1,25 +1,51 @@
-#include "stdafx.h"
+#define WINVER 0x0400
+#define _WIN32_WINNT 0x0400
+#define _WIN32_IE 0x0400
+#define WIN32_LEAN_AND_MEAN
 
-int _tmain(int argc, _TCHAR* argv[])
+#include <windows.h>
+#include <shlwapi.h>
+
+void PrintError(LPCSTR s)
 {
-	if (argc <= 1)
+	DWORD writtenBytes;
+	WriteFile(GetStdHandle(STD_ERROR_HANDLE), s, strlen(s), &writtenBytes, NULL);
+}
+
+bool ClipboardToEmf(LPCTSTR dstFile)
+{
+	if (HENHMETAFILE hemfSrc = static_cast<HENHMETAFILE>(GetClipboardData(CF_ENHMETAFILE)))
 	{
-		std::cerr << "Usage: cb2emf output-filename.emf" << std::endl;
+		if (HENHMETAFILE hemf = CopyEnhMetaFile(hemfSrc, dstFile))
+		{
+			DeleteEnhMetaFile(hemf);
+			return true;
+		}
+		else
+		{
+			PrintError("Failed to save EMF file.\r\n");
+		}
+	}
+	else
+	{
+		PrintError("Cannot get EMF from clipboard.\r\n");
+	}
+	return false;
+}
+
+int main()
+{
+	LPCTSTR args = PathGetArgs(GetCommandLine());
+
+	if (args[0] == TEXT('\0'))
+	{
+		PrintError("Usage: cb2emf output-filename.emf\r\n");
 		return 1;
 	}
 
 	OpenClipboard(0);
-
-	if (auto hemfSrc = static_cast<HENHMETAFILE>(GetClipboardData(CF_ENHMETAFILE)))
-	{
-		auto hemf = CopyEnhMetaFile(hemfSrc, argv[1]);
-		DeleteEnhMetaFile(hemf);
-	}
-	else
-	{
-		std::cerr << "Cannot get EMF from clipboard." << std::endl;
-	}
+	bool ret = ClipboardToEmf(args);
 	CloseClipboard();
-	return 0;
-}
 
+	ExitProcess(ret ? 0 : 1);
+}
